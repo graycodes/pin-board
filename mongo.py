@@ -7,9 +7,9 @@ db = client.pins
 collection = db.test_collection
 
 post = {"author": "Harley",
-"text": "Hello World!",
-"tags": ["mongodb", "python", "random crap"]
-}
+        "text": "Hello World!",
+        "tags": ["mongodb", "python", "random crap"]
+        }
 
 post_id = collection.insert(post)
 print post_id
