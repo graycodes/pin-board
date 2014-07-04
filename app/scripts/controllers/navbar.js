@@ -5,10 +5,10 @@ angular.module('pinboardApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }, {
+    }/*, {
       'title': 'Settings',
       'link': '/settings'
-    }];
+    }*/];
     
     $scope.logout = function() {
       Auth.logout()

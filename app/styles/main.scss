@@ -89,3 +89,52 @@ body {
         border-bottom: 0;
     }
 }
+
+.note {
+    position: relative;
+    background-color: #ffffaa;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border: 1px solid #cccc88;
+    box-shadow: 3px 3px 3px #666;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    .body {
+        height: 120px;
+    }
+
+    .date {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #666;
+        font-weight: bold;
+        font-size: 11px;
+    }
+    .author {
+        position: absolute;
+        bottom: 40px;
+        right: 20px;
+        font-style: italic;
+        color: gray;
+    }
+    .corner {
+        background-color: white;
+        position: absolute; 
+        top: -1px;
+        left: -1px;
+        width: 30px;
+        height: 30px;
+        .corner-inner {
+            width: 30px;
+            height: 30px;
+            border-top: 30px solid transparent;
+            border-bottom: 0px solid transparent;
+            border-right: 30px solid #cc8; 
+            box-shadow: 2px 2px 1px grey;
+        }
+    }
+}
