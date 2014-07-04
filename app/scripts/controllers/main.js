@@ -2,8 +2,13 @@
 
 angular.module('pinboardApp')
     .controller('MainCtrl', function ($scope, $http) {
-        $http.get('/api/notifications').success(function(notifications) {
-            $scope.notifications = notifications;
-        });
+        var getStuff = function() {
+            console.log('again');
+            $http.get('/api/notifications').success(function(notifications) {
+                $scope.notifications = notifications;
+            });
+        };
+        setInterval(getStuff, 4000);
+        getStuff();
 
     });

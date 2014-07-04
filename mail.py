@@ -8,7 +8,7 @@ from datetime import datetime, date
 ## MONGO CONFIG
 client = MongoClient('eagle', 27017)
 db = client['fullstack-dev']
-collection = db.test_collection
+collection = db.notifications
 
 ###IMAP CONFIG
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
