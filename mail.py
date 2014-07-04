@@ -1,5 +1,6 @@
 import email
 import imaplib
+import pdb
 
 mail = imaplib.IMAP4_SSL('imap.gmail.com')
 mail.login('theemailitestwith@gmail.com', 'm00nfruit')
@@ -25,21 +26,38 @@ print email.utils.parseaddr(email_message['From'])[1]
 
 
 def get_first_text_block(email_message_instance):
-    maintype = email_message_instance.get_content_maintype()
-    if maintype == 'multipart':
-        # for part in email_message_instance.get_payload():
-        #     if part.get_content_maintype() == 'text':
-        #         return part.get_payload()
-        return traverse_multipart(email_message_instance.get_payload())
-    elif maintype == 'text':
-        return email_message_instance.get_payload()
+    message_block = email_message_instance.get_payload()
+    #result = traverse_multipart(message_block)
+    
+    result = gray(message_block)
+
+    print result
 
 def traverse_multipart(message_block):
-	for part in message_block:
-		print part.get_content_maintype()
-		if part.get_content_maintype() == 'multipart':
-			traverse_multipart(part.get_payload())
-		elif part.get_content_maintype() == 'text':
-			print part.get_payload()
+    result = ''
+    #pdb.set_trace()
+    #for part in message_block:
+    part = message_block.pop(0)
+    if part.get_content_maintype() == 'multipart':
+        traverse_multipart(part.get_payload())
+    elif part.get_content_type() == 'text/plain':
+    	result = part.get_payload()
+    # print result
+    return result
 
-print get_first_text_block(email_message)
+def gray(msg):
+	if msg[0].get_content_maintype() == 'multipart':
+		return find_txt(msg[0].get_payload())
+	else:
+		return msg.get_payload()
+
+def find_txt(msg):
+	text = ''
+	for part in msg:
+		if part.get_content_type() == 'text/plain':
+			text = part.get_payload()
+	return text
+
+get_first_text_block(email_message)
+# print traverse_multipart(email_message.get_payload())
+ 	
