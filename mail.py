@@ -61,7 +61,7 @@ def find_txt(msg):
     return text
 
 def get_body(id):
-    email_message = email.message_from_string()
+    email_message = email.message_from_string(get_raw_email(id))
     return get_first_text_block(email_message)
 
 
