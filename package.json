@@ -1,6 +1,6 @@
 {
   "name": "pinboard",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "express": "~3.4.3",
     "lodash": "~2.4.1",
@@ -58,6 +58,25 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
-  }
+    "test": "grunt test",
+    "start": "node server.js"
+  },
+  "description": "pin-board =========",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinUmbralis/pin-board.git"
+  },
+  "keywords": [
+    "notifications"
+  ],
+  "author": "Graham MacGregor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xinUmbralis/pin-board/issues"
+  },
+  "homepage": "https://github.com/xinUmbralis/pin-board"
 }
