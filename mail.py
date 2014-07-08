@@ -6,7 +6,7 @@ import pdb
 from datetime import datetime, date
 
 ## MONGO CONFIG
-client = MongoClient('eagle', 27017)
+client = MongoClient('localhost', 27017)
 db = client['fullstack-dev']
 collection = db.notifications
 
