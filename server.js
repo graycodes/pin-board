@@ -38,6 +38,9 @@ require('./lib/config/express')(app);
 // Routing
 require('./lib/routes')(app);
 
+// Keeping up to date
+require('./lib/update');
+
 // Start server
 app.listen(config.port, function () {
   console.log('Express server listening on port %d in %s mode', config.port, app.get('env'));

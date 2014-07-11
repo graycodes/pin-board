@@ -300,8 +300,7 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/**/*',
-            'mail.py'
+            'fonts/**/*'
           ]
         }, {
           expand: true,
