@@ -1,0 +1,3 @@
+pymongo==2.7.1
+vboxapi==1.0
+wsgiref==0.1.2
