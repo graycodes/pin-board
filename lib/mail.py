@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from email.parser import HeaderParser
+import os
 import email
 import imaplib
 import pdb
@@ -7,7 +8,7 @@ from datetime import datetime, date
 
 ## MONGO CONFIG
 client = MongoClient('localhost', 27017)
-db = client['fullstack-dev']
+db = client['fullstack'] if (os.environ.get('NODE_ENV', 'else') == 'production') else client['fullstack-dev']
 collection = db.notifications
 
 ###IMAP CONFIG
