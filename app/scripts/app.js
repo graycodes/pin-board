@@ -10,7 +10,7 @@ angular.module('pinboardApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl as main'
       })
       .when('/login', {
         templateUrl: 'partials/login',

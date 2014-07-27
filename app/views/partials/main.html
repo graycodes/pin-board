@@ -1,7 +1,9 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div ng-repeat="note in notifications">
+<div ng-repeat="note in main.notifications">
   <article class="note">
+    <a ng-show="currentUser" href="" ng-click="main.deleteNotification($index)" 
+       class="delete">delete</a>
     <h2>{{note.title}}</h2>
     <div class="body">{{note.body}}</div>
     <div class="date">{{note.timestamp | date: "EEEE dd MMMM hh:mm:ss"}}</div>
