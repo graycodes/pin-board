@@ -23,8 +23,7 @@ angular.module('pinboardApp')
 
             return $http.post('/api/notification/' + id + '/hide/', {notification: notification})
                 .success(function(data, status, headers, config) {
-                    console.log('deleted: ');
-                    console.log(data, status, headers, config);
+                    NotificationFactory.notifications.splice(index, 1);
                 }).error(function(data) {
                     console.log('error: ');
                     console.log(data);
